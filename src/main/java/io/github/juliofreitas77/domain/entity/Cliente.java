@@ -1,5 +1,7 @@
 package io.github.juliofreitas77.domain.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,6 +17,7 @@ public class Cliente {
     private String nome;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
     private Set<Pedido> pedidos;
 
     public Cliente() {
